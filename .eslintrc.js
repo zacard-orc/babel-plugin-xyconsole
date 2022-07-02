@@ -21,5 +21,6 @@ module.exports = {
     rules: {
         semi: ['error', 'never'],
         indent: ['error', 4],
+        'no-param-reassign': 0,
     },
 }
