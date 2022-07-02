@@ -10,8 +10,10 @@ require('babel-register')
 
 const devPlugin = require('../src')
 
-function runTest(dir) {
-    const sourceCode = fs.readFileSync(`${dir}/basic.js`, {
+function runTest(sourcefile, matchRule) {
+    const dir = path.resolve(__dirname, 'code')
+    const full = `${dir}/${sourcefile}`
+    const sourceCode = fs.readFileSync(full, {
         encoding: 'utf-8',
     })
 
@@ -40,7 +42,7 @@ function runTest(dir) {
             .replace(/;/g, '')
     }
 
-    process.stdout.write(chalk.bgCyan(dir))
+    process.stdout.write(chalk.bgCyan('[Diff]', full))
     process.stdout.write('\n\n')
 
     const warning = chalk.hex('#FFA500').bold// Orange color
@@ -48,13 +50,13 @@ function runTest(dir) {
     // https://en.wikipedia.org/wiki/ANSI_escape_code#8-bit
     // ansi-256
 
-    const dres = diff.diffLines(normalizeLines(sourceCode), normalizeLines(outputCode), {
+    const raw = diff.diffLines(normalizeLines(sourceCode), normalizeLines(outputCode), {
         newlineIsToken: true,
         ignoreWhitespace: false,
     })
         .reduce((prev, part) => {
             const { value, added } = part
-            if (added && part.value.includes('..') >= 0) {
+            if (added >= 0) {
                 prev.push(value)
                 process.stdout.write(`${warning(' =>')} ${chalk.bgAnsi256(215)(value)}`)
             } else {
@@ -64,8 +66,23 @@ function runTest(dir) {
             return prev
         }, [])
 
-    console.log(dres)
-    return dres
+    process.stdout.write('\n\n')
+    process.stdout.write(chalk.bgCyan('[Result]'))
+    process.stdout.write('\n')
+    const rt = raw.filter((el) => {
+        const charIdx = el.search(matchRule)
+        if (charIdx >= 0) {
+            console.log(charIdx, ':', el)
+        }
+        return charIdx >= 0
+    })
+
+    return rt.length
 }
 
-runTest(path.resolve(__dirname, 'code'))
+// const reg = /\.\./i
+// runTest('basic.js', reg)
+
+module.exports = {
+    runTest,
+}

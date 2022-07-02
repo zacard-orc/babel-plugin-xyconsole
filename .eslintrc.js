@@ -4,6 +4,7 @@ module.exports = {
         commonjs: true,
         es2021: true,
         node: true,
+        'jest/globals': true,
     },
     extends: [
         'plugin:react/recommended',
@@ -17,10 +18,12 @@ module.exports = {
     },
     plugins: [
         'react',
+        'jest',
     ],
     rules: {
         semi: ['error', 'never'],
         indent: ['error', 4],
         'no-param-reassign': 0,
+        'no-console': 0,
     },
 }
