@@ -1,0 +1,31 @@
+{
+  "name": "babel-plugin-xyconsole",
+  "version": "1.0.0",
+  "description": "A Tool of Console.log",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zacard-orc/babel-plugin-xyconsole.git"
+  },
+  "keywords": [
+    "babel",
+    "console.log",
+    "loader",
+    "ansi",
+    "chalk",
+    "color",
+    "console",
+    "fe",
+    "web",
+    "nodejs"
+  ],
+  "author": "zacard.lin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zacard-orc/babel-plugin-xyconsole/issues"
+  },
+  "homepage": "https://github.com/zacard-orc/babel-plugin-xyconsole#readme"
+}
