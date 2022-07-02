@@ -27,5 +27,17 @@
   "bugs": {
     "url": "https://github.com/zacard-orc/babel-plugin-xyconsole/issues"
   },
-  "homepage": "https://github.com/zacard-orc/babel-plugin-xyconsole#readme"
+  "homepage": "https://github.com/zacard-orc/babel-plugin-xyconsole#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "jest": "^28.1.2"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.30.3",
+    "@typescript-eslint/scope-manager": "5.30.3",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.0",
+    "eslint-plugin-react": "^7.28.0"
+  }
 }
