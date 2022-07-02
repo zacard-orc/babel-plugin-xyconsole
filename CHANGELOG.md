@@ -1,3 +1,10 @@
+## 1.1.0 (2022-07-02)
+
+* :hammer: feat: trim code ([5dfdb11](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/5dfdb11))
+* :rocket: feat: created first ci ([0eede40](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/0eede40))
+
+
+
 ## <small>1.0.1 (2022-07-02)</small>
 
 * :art: doc: update ([1c98b92](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/1c98b92))
