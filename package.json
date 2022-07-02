@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-xyconsole",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Tool of Console.log",
   "main": "index.js",
   "scripts": {
@@ -29,22 +29,18 @@
   },
   "homepage": "https://github.com/zacard-orc/babel-plugin-xyconsole#readme",
   "devDependencies": {
-    "eslint": "^7.32.0",
-    "jest": "^28.1.2",
     "commitlint-config-gitmoji": "^2.2.3",
     "conventional-changelog-cli": "^2.1.1",
-    "conventional-changelog-conventionalcommits": "^4.5.0"
+    "conventional-changelog-conventionalcommits": "^4.5.0",
+    "eslint": "^7.32.0",
+    "jest": "^28.1.2"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.30.3",
-    "@typescript-eslint/scope-manager": "5.30.3",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsx-a11y": "^6.6.0",
-    "eslint-plugin-react": "^7.28.0",
     "@babel/core": "^7.13.14",
     "@babel/plugin-transform-runtime": "^7.7.6",
     "@babel/preset-react": "^7.14.5",
+    "@typescript-eslint/eslint-plugin": "^5.30.3",
+    "@typescript-eslint/scope-manager": "5.30.3",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.2.2",
@@ -53,6 +49,10 @@
     "babel-register": "^6.26.0",
     "chalk": "^5.0.1",
     "cross-env": "^7.0.3",
-    "dayjs": "^1.10.4"
+    "dayjs": "^1.10.4",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.0",
+    "eslint-plugin-react": "^7.28.0"
   }
 }
