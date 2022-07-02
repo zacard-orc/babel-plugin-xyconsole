@@ -11,8 +11,6 @@ require('babel-register')
 const devPlugin = require('../src')
 
 function runTest(dir) {
-    const exitCode = 0
-
     const sourceCode = fs.readFileSync(`${dir}/basic.js`, {
         encoding: 'utf-8',
     })
@@ -35,10 +33,6 @@ function runTest(dir) {
         ],
     })
 
-    // console.log(outputCode)
-
-    // const expected = fs.readFileSync(`${dir}/expected.js`, 'utf-8')
-    //
     function normalizeLines(str) {
         return str
             .trimRight()
