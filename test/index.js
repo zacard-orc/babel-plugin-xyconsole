@@ -42,6 +42,7 @@ function runTest(sourcefile, matchRule) {
                     outputDir: path.resolve(__dirname, './docs'),
                     format: 'markdown',
                     linly: 'abc',
+                    tsfmt: 'YYYY-MM-DD HH:mm:ss',
                 },
             ],
         ],
