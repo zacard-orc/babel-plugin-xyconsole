@@ -1,3 +1,12 @@
+## <small>1.1.4 (2022-07-03)</small>
+
+* :construction_worker: feat: create dev ([916c8c0](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/916c8c0))
+* :memo: feat: add sample again ([dfddfd6](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/dfddfd6))
+* :recycle: feat: adjust dir ([d74e48f](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/d74e48f))
+* :wrench: feat: adjust transform parameters ([1ab2681](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/1ab2681))
+
+
+
 ## <small>1.1.3 (2022-07-03)</small>
 
 * :memo: feat: add sample ([48dd6b2](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/48dd6b2))
