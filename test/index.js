@@ -9,7 +9,7 @@ const diff = require('diff')
 const devPlugin = require('../src')
 
 function runTest(sourcefile, matchRule) {
-    const dir = path.resolve(__dirname, 'code')
+    const dir = path.resolve(__dirname, '../', 'sample/code')
     const full = `${dir}/${sourcefile}`
     const sourceCode = fs.readFileSync(full, {
         encoding: 'utf-8',
@@ -78,8 +78,8 @@ function runTest(sourcefile, matchRule) {
     return rt.length
 }
 
-// const reg = /\.\./i
-// runTest('basic.js', reg)
+const reg = /\.\./i
+runTest('basic.js', reg)
 
 module.exports = {
     runTest,

@@ -3,19 +3,17 @@ const { declare } = require('@babel/helper-plugin-utils')
 const xyconsolePlugin = declare((api, options, dirname) => {
     // console.log('a', api)
     console.log('b', options)
+    console.log('c', dirname)
+    const fileset = new Set()
     return {
         visitor: {
             Identifier(path, state) {
-                console.log(state.file.opts.filename)
-            },
-            ImportDeclaration(path, PluginPass) {
-                // if (path.node.source.value.includes(`@/${PluginPass.opts.hitDir[0]}`)) {
-                if (path.node.source.value.includes('@')) {
-                    path.node.source.value = path.node.source.value.replace('@', '..')
-                }
+                fileset.add(state.file.opts.filename)
             },
             CallExpression(path, PluginPass) {
                 // console.log(PluginPass.opts)
+                const calleeName = path.get('callee').toString()
+                console.log(calleeName)
             },
         },
     }
