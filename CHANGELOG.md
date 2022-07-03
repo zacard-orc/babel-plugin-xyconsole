@@ -1,3 +1,9 @@
+## <small>1.1.2 (2022-07-03)</small>
+
+* :memo: doc: reade ([cb99cce](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/cb99cce))
+
+
+
 ## <small>1.1.1 (2022-07-03)</small>
 
 * :construction: feat: add release cmd ([c6237a3](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/c6237a3))
