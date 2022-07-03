@@ -1,3 +1,11 @@
+## <small>1.1.1 (2022-07-03)</small>
+
+* :construction: feat: add release cmd ([c6237a3](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/c6237a3))
+* :construction: test: add jest case ([05b4b72](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/05b4b72))
+* :memo: doc: npm ([2d53f46](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/2d53f46))
+
+
+
 ## 1.1.0 (2022-07-02)
 
 * :hammer: feat: trim code ([5dfdb11](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/5dfdb11))
