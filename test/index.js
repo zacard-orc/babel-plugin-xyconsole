@@ -2,7 +2,9 @@ const fs = require('fs')
 const path = require('path')
 
 const parser = require('@babel/parser')
-const { transformFromAstSync } = require('@babel/core')
+const {
+    transformFromAstSync,
+} = require('@babel/core')
 const chalk = require('chalk')
 const diff = require('diff')
 
@@ -20,7 +22,19 @@ function runTest(sourcefile, matchRule) {
         plugins: ['typescript', 'jsx'],
     })
 
+    // interface TransformOptions
     const { code: outputCode } = transformFromAstSync(ast, sourceCode, {
+        highlightCode: true,
+        filename: sourcefile,
+        minified: false,
+        compact: undefined,
+        retainLines: true,
+        generatorOpts: {
+            jsescOption: {
+                wrap: true,
+                minimal: false,
+            },
+        },
         plugins: [
             [
                 devPlugin,

@@ -1,7 +1,7 @@
 const { declare } = require('@babel/helper-plugin-utils')
 const types = require('@babel/types')
 
-const targetCalleeName = ['log', 'info', 'error', 'debug'].map((item) => `console.${item}`)
+const targetCalleeName = ['log', 'info', 'error', 'debug', 'trace'].map((item) => `console.${item}`)
 
 const xyconsolePlugin = declare((api, options, dirname) => {
     // console.log('a', api)
