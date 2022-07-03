@@ -5,6 +5,6 @@ A tool of console.log
 
 
 # Sample
-
+1
 
 # Support
