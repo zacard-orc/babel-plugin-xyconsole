@@ -2,11 +2,20 @@
   "name": "babel-plugin-xyconsole",
   "version": "1.1.0",
   "description": "A Tool of Console.log",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "release": "babel src --out-dir dist",
+    "test": "jest",
     "version": "conventional-changelog -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
+  "files": [
+    "dist/*",
+    "test/*",
+    "package.json",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zacard-orc/babel-plugin-xyconsole.git"
