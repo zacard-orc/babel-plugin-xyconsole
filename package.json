@@ -4,6 +4,7 @@
   "description": "A Tool of Console.log",
   "main": "index.js",
   "scripts": {
+    "release": "babel src --out-dir dist",
     "version": "conventional-changelog -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
   "repository": {

@@ -6,8 +6,6 @@ const { transformFromAstSync } = require('@babel/core')
 const chalk = require('chalk')
 const diff = require('diff')
 
-require('babel-register')
-
 const devPlugin = require('../src')
 
 function runTest(sourcefile, matchRule) {

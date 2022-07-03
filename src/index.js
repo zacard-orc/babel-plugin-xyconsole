@@ -5,6 +5,9 @@ const xyconsolePlugin = declare((api, options, dirname) => {
     console.log('b', options)
     return {
         visitor: {
+            Identifier(path, state) {
+                console.log(state.file.opts.filename)
+            },
             ImportDeclaration(path, PluginPass) {
                 // if (path.node.source.value.includes(`@/${PluginPass.opts.hitDir[0]}`)) {
                 if (path.node.source.value.includes('@')) {
