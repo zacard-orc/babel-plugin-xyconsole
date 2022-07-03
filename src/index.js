@@ -1,9 +1,12 @@
 const { declare } = require('@babel/helper-plugin-utils')
+const types = require('@babel/types')
+
+const targetCalleeName = ['log', 'info', 'error', 'debug'].map((item) => `console.${item}`)
 
 const xyconsolePlugin = declare((api, options, dirname) => {
     // console.log('a', api)
-    console.log('b', options)
-    console.log('c', dirname)
+    // console.log('b', options)
+    // console.log('c', dirname)
     const fileset = new Set()
     return {
         visitor: {
@@ -13,7 +16,13 @@ const xyconsolePlugin = declare((api, options, dirname) => {
             CallExpression(path, PluginPass) {
                 // console.log(PluginPass.opts)
                 const calleeName = path.get('callee').toString()
-                console.log(calleeName)
+
+                if (targetCalleeName.includes(calleeName)) {
+                    const { line, column } = path.node.loc.start
+                    path.node.arguments.unshift(types.stringLiteral(`filename: (${line}, ${column})`))
+                }
+
+                // console.log(calleeName)
             },
         },
     }
