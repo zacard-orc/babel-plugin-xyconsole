@@ -1,3 +1,9 @@
+## <small>1.1.3 (2022-07-03)</small>
+
+* :memo: feat: add sample ([48dd6b2](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/48dd6b2))
+
+
+
 ## <small>1.1.2 (2022-07-03)</small>
 
 * :memo: doc: reade ([cb99cce](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/cb99cce))
