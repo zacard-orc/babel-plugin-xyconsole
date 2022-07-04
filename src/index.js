@@ -41,20 +41,17 @@ const xyconsolePlugin = declare((api, options, dirname) => {
 
         const { type: parentType } = container
         ret.type = parentType
-        ret.name = null
+        ret.name = ''
 
         switch (parentType) {
         case 'File': {
-            console.log('File')
             break
         }
         case 'FunctionDeclaration': {
-            console.log('FunctionDeclaration')
             ret.name = container.id.name
             break
         }
         case 'ClassMethod': {
-            console.log('ClassMethod')
             if (container.key && container.key.type === 'Identifier') {
                 ret.name = container.key.name
 
@@ -66,7 +63,6 @@ const xyconsolePlugin = declare((api, options, dirname) => {
             break
         }
         case 'ReturnStatement': {
-            console.log('ReturnStatement')
             if (container.argument.type === 'JSXElement') {
                 const { openingElement } = container.argument
                 if (openingElement.name.type === 'JSXIdentifier') {
@@ -76,7 +72,6 @@ const xyconsolePlugin = declare((api, options, dirname) => {
             break
         }
         default: {
-            console.log('N/A', parentType)
             ret.type = null
         }
         }
@@ -104,12 +99,11 @@ const xyconsolePlugin = declare((api, options, dirname) => {
                 }
 
                 const parent = getParent(bbpath)
-                console.log(parent)
 
                 const { line: x, column: y } = bbpath.node.loc.start
-                const fn = getFilename()
+                const file = getFilename()
                 const ts = `(new Date()).to${tsfmt}()`
-                bbpath.node.arguments.unshift(types.stringLiteral(`[${fn}:${x}]`))
+                bbpath.node.arguments.unshift(types.stringLiteral(`[${file}:${x}][${parent.name}]`))
 
                 const newNode = template.expression(ts)()
                 bbpath.node.arguments.unshift(newNode)
