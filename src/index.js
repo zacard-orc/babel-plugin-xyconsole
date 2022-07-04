@@ -5,6 +5,8 @@ const targetCalleeName = ['log', 'info', 'error', 'debug', 'trace'].map((item) =
 
 const xyconsolePlugin = declare((api, options, dirname) => {
     const fileset = new Set()
+    const method = new Map()
+
     const { types, template } = api
     const { tsfmt } = options
 
@@ -17,6 +19,21 @@ const xyconsolePlugin = declare((api, options, dirname) => {
         return path.basename(full)
     }
 
+    function getClassName(zpath) {
+        if (zpath
+            && zpath.parentPath
+            && zpath.parentPath.parentPath
+            && zpath.parentPath.parentPath.parentPath
+            && zpath.parentPath.parentPath.parentPath.parentPath
+        ) {
+            const { parent } = zpath.parentPath.parentPath.parentPath.parentPath
+            if (parent.type === 'ClassDeclaration') {
+                return parent.id.name
+            }
+        }
+        return null
+    }
+
     function getParent(zpath) {
         const ret = {}
 
@@ -24,7 +41,7 @@ const xyconsolePlugin = declare((api, options, dirname) => {
 
         const { type: parentType } = container
         ret.type = parentType
-        ret.name = 'n/a'
+        ret.name = null
 
         switch (parentType) {
         case 'File': {
@@ -40,6 +57,11 @@ const xyconsolePlugin = declare((api, options, dirname) => {
             console.log('ClassMethod')
             if (container.key && container.key.type === 'Identifier') {
                 ret.name = container.key.name
+
+                const className = getClassName(zpath)
+                if (className) {
+                    ret.name = `${className}:${container.key.name}`
+                }
             }
             break
         }
@@ -67,6 +89,12 @@ const xyconsolePlugin = declare((api, options, dirname) => {
             Identifier(bbpath, state) {
                 fileset.add(state.file.opts.filename)
             },
+            ClassMethod(bbpath, state) {
+                // todo
+            },
+            ClassDeclaration(bbpath) {
+                // todo
+            },
             CallExpression(bbpath, PluginPass) {
                 // console.log(PluginPass.opts)
                 const calleeName = bbpath.get('callee').toString()
@@ -85,10 +113,6 @@ const xyconsolePlugin = declare((api, options, dirname) => {
 
                 const newNode = template.expression(ts)()
                 bbpath.node.arguments.unshift(newNode)
-                // console.log(calleeName)
-            },
-            ClassDeclaration(bbpath) {
-
             },
         },
     }

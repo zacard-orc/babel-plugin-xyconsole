@@ -4,6 +4,10 @@ console.log(1)
 
 function func() {
     console.info(2)
+
+    function abc() {
+        console.log('abcd')
+    }
 }
 
 export default class Clazz {
