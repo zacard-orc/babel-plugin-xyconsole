@@ -1,15 +1,11 @@
 const { declare } = require('@babel/helper-plugin-utils')
-const types = require('@babel/types')
 const path = require('path')
-const dayjs = require('dayjs')
 
 const targetCalleeName = ['log', 'info', 'error', 'debug', 'trace'].map((item) => `console.${item}`)
 
 const xyconsolePlugin = declare((api, options, dirname) => {
-    // console.log('a', api)
-    // console.log('b', options)
-    // console.log('c', dirname)
     const fileset = new Set()
+    const { types, template } = api
 
     function getFilename() {
         const af = Array.from(fileset)
@@ -34,7 +30,9 @@ const xyconsolePlugin = declare((api, options, dirname) => {
                     const fn = getFilename()
                     const ts = '(new Date()).toISOString()'
                     bbpath.node.arguments.unshift(types.stringLiteral(`[${fn}:${x}]`))
-                    // bbpath.node.arguments.unshift(types.callExpression(`${ts}`))
+
+                    const newNode = template.expression(ts)()
+                    bbpath.node.arguments.unshift(newNode)
                 }
 
                 // console.log(calleeName)
