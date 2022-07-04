@@ -82,6 +82,7 @@ function runTest(sourcefile, matchRule) {
     process.stdout.write('\n\n')
     process.stdout.write(chalk.bgCyan('[Result]'))
     process.stdout.write('\n')
+
     const rt = raw.filter((el) => {
         const charIdx = el.search(matchRule)
         if (charIdx >= 0) {
@@ -90,10 +91,13 @@ function runTest(sourcefile, matchRule) {
         return charIdx >= 0
     })
 
+    process.stdout.write('\n')
+    process.stdout.write(chalk.bgCyan(`[Diff Total]:${rt.length}`))
+
     return rt.length
 }
 
-const reg = /\.\./i
+const reg = /\[*:*\]/i
 runTest('basic.js', reg)
 
 module.exports = {
