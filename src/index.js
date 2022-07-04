@@ -6,6 +6,7 @@ const targetCalleeName = ['log', 'info', 'error', 'debug', 'trace'].map((item) =
 const xyconsolePlugin = declare((api, options, dirname) => {
     const fileset = new Set()
     const { types, template } = api
+    const { tsfmt } = options
 
     function getFilename() {
         const af = Array.from(fileset)
@@ -28,7 +29,7 @@ const xyconsolePlugin = declare((api, options, dirname) => {
                 if (targetCalleeName.includes(calleeName)) {
                     const { line: x, column: y } = bbpath.node.loc.start
                     const fn = getFilename()
-                    const ts = '(new Date()).toISOString()'
+                    const ts = `(new Date()).${tsfmt}()`
                     bbpath.node.arguments.unshift(types.stringLiteral(`[${fn}:${x}]`))
 
                     const newNode = template.expression(ts)()
