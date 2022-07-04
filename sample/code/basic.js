@@ -1,7 +1,10 @@
 import logger from '@common/logger'
 
 console.log(1)
-console.log('2')
+function func() {
+    console.info(2)
+}
+
 console.log(null)
 
 console.log('a', 1, true)

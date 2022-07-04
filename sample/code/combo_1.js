@@ -15,3 +15,17 @@ export default class Clazz {
         return <div>{console.error(4)}</div>
     }
 }
+
+export class Nic {
+    say() {
+        console.debug(3)
+    }
+
+    static za() {
+        console.debug('zab')
+    }
+
+    render() {
+        return <Bze>{console.error(4)}</Bze>
+    }
+}
