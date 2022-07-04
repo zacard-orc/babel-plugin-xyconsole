@@ -1,3 +1,18 @@
+## 1.2.0 (2022-07-04)
+
+* :art: feat: support format ([3d558f0](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/3d558f0))
+* :construction_worker: test: adjust case ([6390b2e](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/6390b2e))
+* :construction_worker: test: jest ([082840d](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/082840d))
+* :construction: doc: update README ([81a3e7f](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/81a3e7f))
+* :pencil2: feat: add new node ([633b9cb](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/633b9cb))
+* :pencil2: feat: start to add timestamp ([e17497d](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/e17497d))
+* :sparkles: feat: add parent ([389655f](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/389655f))
+* :sparkles: feat: get parent ([2624a2c](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/2624a2c))
+* :tada: doc: update README ([eac75fb](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/eac75fb))
+* :tada: feat: format parent string ([a4b54e8](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/a4b54e8))
+
+
+
 ## <small>1.1.4 (2022-07-03)</small>
 
 * :construction_worker: feat: create dev ([916c8c0](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/916c8c0))
