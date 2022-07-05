@@ -43,7 +43,7 @@ function runTest(sourcefile, matchRule) {
                     format: 'markdown',
                     linly: 'abc',
                     tsFmt: 'GMTString',
-                    lineFmt: '%file %x %y %func',
+                    lineFmt: '[%file:%x] %func',
                     colorSchema: '',
                 },
             ],

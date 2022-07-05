@@ -38,7 +38,37 @@ const xyconsolePlugin = declare((api, options, dirname) => {
             x, y, file, func,
         } = ele
 
-        return `[${file}:${x}][${func}]`
+        const dftLineFmt = `[${file}:${x}][${func}]`
+
+        const {
+            lineFmt,
+        } = opt
+        /*
+         <= [%file:%x,%y] %func
+         => [${file}:${x}][${func}]
+         */
+        let cvlineFmt = ''
+        if (lineFmt && lineFmt.length > 0) {
+            const arg = [...lineFmt.matchAll(/%[a-z]+/g)]
+            let cursor = 0
+
+            arg.forEach((el) => {
+                const idf = el[0].slice(1)
+                // get pretext
+                const pre = lineFmt.substring(cursor, el.index)
+
+                cvlineFmt += pre
+                // eslint-disable-next-line no-eval
+                cvlineFmt += `${eval(idf)}`
+                console.log(cvlineFmt)
+
+                cursor = el.index + idf.length + 1
+            })
+        }
+
+        return cvlineFmt.length > 0
+            ? cvlineFmt
+            : dftLineFmt
     }
 
     function getParent(zpath) {
