@@ -1,3 +1,10 @@
+## <small>1.2.1 (2022-07-05)</small>
+
+* :zap: feat: add new params ([da7fe87](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/da7fe87))
+* :zap: feat: support custom format ([3398012](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/3398012))
+
+
+
 ## 1.2.0 (2022-07-04)
 
 * :art: feat: support format ([3d558f0](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/3d558f0))
