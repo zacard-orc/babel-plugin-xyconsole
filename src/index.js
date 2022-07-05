@@ -8,7 +8,6 @@ const xyconsolePlugin = declare((api, options, dirname) => {
     const method = new Map()
 
     const { types, template } = api
-    const { tsfmt } = options
 
     function getFilename() {
         const af = Array.from(fileset)
@@ -32,6 +31,14 @@ const xyconsolePlugin = declare((api, options, dirname) => {
             }
         }
         return null
+    }
+
+    function fmtString(ele, opt) {
+        const {
+            x, y, file, func,
+        } = ele
+
+        return `[${file}:${x}][${func}]`
     }
 
     function getParent(zpath) {
@@ -91,8 +98,8 @@ const xyconsolePlugin = declare((api, options, dirname) => {
                 // todo
             },
             CallExpression(bbpath, PluginPass) {
-                // console.log(PluginPass.opts)
                 const calleeName = bbpath.get('callee').toString()
+                const { tsFmt } = PluginPass.opts
 
                 if (!targetCalleeName.includes(calleeName)) {
                     return
@@ -102,9 +109,16 @@ const xyconsolePlugin = declare((api, options, dirname) => {
 
                 const { line: x, column: y } = bbpath.node.loc.start
                 const file = getFilename()
-                const ts = `(new Date()).to${tsfmt}()`
-                bbpath.node.arguments.unshift(types.stringLiteral(`[${file}:${x}][${parent.name}]`))
 
+                const dft = fmtString({
+                    x,
+                    y,
+                    file,
+                    func: parent.name,
+                }, PluginPass.opts)
+                bbpath.node.arguments.unshift(types.stringLiteral(dft))
+
+                const ts = `(new Date()).to${tsFmt}()`
                 const newNode = template.expression(ts)()
                 bbpath.node.arguments.unshift(newNode)
             },
