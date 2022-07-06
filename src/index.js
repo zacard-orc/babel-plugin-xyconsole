@@ -60,8 +60,6 @@ const xyconsolePlugin = declare((api, options, dirname) => {
                 cvlineFmt += pre
                 // eslint-disable-next-line no-eval
                 cvlineFmt += `${eval(idf)}`
-                console.log(cvlineFmt)
-
                 cursor = el.index + idf.length + 1
             })
         }

@@ -101,7 +101,8 @@ function runTest(sourcefile, matchRule) {
 
 const reg = /\[*:*\]/i
 // runTest('basic.js', reg)
-runTest('combo_1.js', reg)
+// runTest('combo_1.js', reg)
+runTest('iife.js', reg)
 
 module.exports = {
     runTest,
