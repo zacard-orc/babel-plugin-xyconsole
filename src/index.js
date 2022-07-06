@@ -1,5 +1,6 @@
 const { declare } = require('@babel/helper-plugin-utils')
 const path = require('path')
+const { setFG, setBG } = require('./color')
 
 const targetCalleeName = ['log', 'info', 'error', 'debug', 'trace'].map((item) => `console.${item}`)
 
@@ -114,6 +115,22 @@ const xyconsolePlugin = declare((api, options, dirname) => {
         return ret
     }
 
+    function getTs(opt) {
+        const { tsFmt } = opt
+        if (tsFmt.includes('V2')) {
+            const pureFmt = tsFmt.replace('V2', '')
+            return `(new Date()).to${pureFmt}().replace(/[TZ]/g,' ').slice(0,-1)`
+        }
+
+        return `(new Date()).to${tsFmt}()`
+    }
+
+    function getLevel(raw) {
+        const b = `[${setFG('DeepSkyBlue')}${raw}${setFG('Gainsboro')}]`
+        console.log(b)
+        return b
+    }
+
     return {
         visitor: {
             Identifier(bbpath, state) {
@@ -127,7 +144,7 @@ const xyconsolePlugin = declare((api, options, dirname) => {
             },
             CallExpression(bbpath, PluginPass) {
                 const calleeName = bbpath.get('callee').toString()
-                const { tsFmt } = PluginPass.opts
+                const ce = bbpath.get('callee')
 
                 if (!targetCalleeName.includes(calleeName)) {
                     return
@@ -146,7 +163,13 @@ const xyconsolePlugin = declare((api, options, dirname) => {
                 }, PluginPass.opts)
                 bbpath.node.arguments.unshift(types.stringLiteral(dft))
 
-                const ts = `(new Date()).to${tsFmt}()`
+                const level = getLevel(ce.node.property.name)
+                console.log(level)
+                console.log(types.stringLiteral(level))
+                bbpath.node.arguments.unshift(types.stringLiteral(level))
+
+                // https://www.jb51.net/article/122984.htm
+                const ts = getTs(PluginPass.opts)
                 const newNode = template.expression(ts)()
                 bbpath.node.arguments.unshift(newNode)
             },

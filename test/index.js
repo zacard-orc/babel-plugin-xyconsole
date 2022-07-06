@@ -39,10 +39,7 @@ function runTest(sourcefile, matchRule) {
             [
                 devPlugin,
                 {
-                    outputDir: path.resolve(__dirname, './docs'),
-                    format: 'markdown',
-                    linly: 'abc',
-                    tsFmt: 'GMTString',
+                    tsFmt: 'ISOStringV2',
                     lineFmt: '[%file:%x] %func',
                     colorSchema: '',
                 },
@@ -54,7 +51,7 @@ function runTest(sourcefile, matchRule) {
         return str
             .trimRight()
             .replace(/\r\n/g, '')
-            .replace(/;/g, '')
+            // .replace(/;/g, '')
     }
 
     process.stdout.write(chalk.bgCyan('[Diff]', full))
