@@ -103,7 +103,8 @@ const reg = /\[*:*\]/i
 // runTest('iife.js', reg)
 // runTest('poem_en.js', reg)
 // runTest('poem_de.js', reg)
-runTest('poem_zh-cn.js', reg)
+// runTest('poem_zh-cn.js', reg)
+runTest('poem_jp.js', reg)
 
 module.exports = {
     runTest,

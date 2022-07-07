@@ -1,0 +1,6 @@
+console.log('山道を登りながら　こう考えた')
+console.debug('地には叩けば　角が立つ')
+console.warn('情に棹差せば　ながされろ')
+console.error('意地を通せば　窮屈だ')
+console.info('とにかく　人の世は住みにくい')
+console.log('人の世　夏目漱石')
