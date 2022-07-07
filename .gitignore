@@ -3,6 +3,10 @@
 .vscode
 dist
 
+# tmp
+tmp.js
+output.js
+
 # Logs
 logs
 *.log

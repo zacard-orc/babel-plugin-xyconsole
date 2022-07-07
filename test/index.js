@@ -53,6 +53,8 @@ function runTest(sourcefile, matchRule) {
             .replace(/\r\n/g, '')
     }
 
+    fs.writeFileSync('output.js', outputCode)
+
     process.stdout.write(chalk.bgCyan('[Diff]', full))
     process.stdout.write('\n\n')
 
@@ -98,7 +100,8 @@ function runTest(sourcefile, matchRule) {
 const reg = /\[*:*\]/i
 // runTest('basic.js', reg)
 // runTest('combo_1.js', reg)
-runTest('iife.js', reg)
+// runTest('iife.js', reg)
+runTest('poem_en.js', reg)
 
 module.exports = {
     runTest,

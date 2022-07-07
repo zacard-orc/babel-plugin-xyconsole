@@ -126,9 +126,25 @@ const xyconsolePlugin = declare((api, options, dirname) => {
     }
 
     function getLevel(raw) {
-        // const b = `[${setFG('DeepSkyBlue')}${raw}${setFG('Gainsboro')}]`
-        // eslint-disable-next-line prefer-template,quotes
-        return "[" + setFG('DeepSkyBlue') + raw + setClear() + "]"
+        switch (raw) {
+        case 'log': {
+            return `[${setFG('DeepSkyBlue')}${raw}${setClear()}]`
+        }
+        case 'info': {
+            return `[${setFG('LimeGreen')}${raw}${setClear()}]`
+        }
+        case 'debug': {
+            return `[${setFG('DarkOrange')}${raw}${setClear()}]`
+        }
+        case 'trace': {
+            return `[${setFG('Fuchsia')}${raw}${setClear()}]`
+        }
+        case 'error': {
+            return `[${setFG('Crimson')}${raw}${setClear()}]`
+        }
+        default:
+            return `[${setFG('DeepSkyBlue')}${raw}${setClear()}]`
+        }
     }
 
     return {

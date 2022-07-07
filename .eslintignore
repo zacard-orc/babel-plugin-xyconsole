@@ -1,1 +1,3 @@
 test/code/*.js
+test/tmp.js
+test/output.js
