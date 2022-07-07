@@ -1,3 +1,11 @@
+## <small>1.2.2 (2022-07-07)</small>
+
+* :lipstick: feat: color support ing ([261f504](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/261f504))
+* :lipstick: feat: done color expr ([9b68efe](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/9b68efe))
+* :zap: feat: support custom format ([e819250](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/e819250))
+
+
+
 ## <small>1.2.1 (2022-07-05)</small>
 
 * :zap: feat: add new params ([da7fe87](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/da7fe87))
