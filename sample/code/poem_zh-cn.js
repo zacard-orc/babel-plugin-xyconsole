@@ -1,0 +1,5 @@
+console.log('夜半无眠倚栏忧，')
+console.info('慢吞云雾缓吐愁，')
+console.debug('晚霜携走半缕烟，')
+console.warn('清风也染人间忧。')
+console.trace('最美古诗词@陈静静.Tiktok')

@@ -1,0 +1,6 @@
+console.log('Wandrers Nachtlied')
+console.info('Über allen Gipfeln ist Ruh,')
+console.debug('In allen Wipfeln spürest du,')
+console.debug('Kaum einen Hauch.')
+console.debug('Die Vögelein schweigen im Walde.')
+console.debug('Warte nur, bald ruhest du auch.')

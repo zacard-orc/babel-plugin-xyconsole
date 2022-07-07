@@ -2,7 +2,7 @@ const { declare } = require('@babel/helper-plugin-utils')
 const path = require('path')
 const { setFG, setBG, setClear } = require('./color')
 
-const targetCalleeName = ['log', 'info', 'error', 'debug', 'trace'].map((item) => `console.${item}`)
+const targetCalleeName = ['log', 'info', 'error', 'debug', 'trace', 'warn'].map((item) => `console.${item}`)
 
 const xyconsolePlugin = declare((api, options, dirname) => {
     const fileset = new Set()
@@ -134,6 +134,9 @@ const xyconsolePlugin = declare((api, options, dirname) => {
             return `[${setFG('LimeGreen')}${raw}${setClear()}]`
         }
         case 'debug': {
+            return `[${setFG('DarkCyan')}${raw}${setClear()}]`
+        }
+        case 'warn': {
             return `[${setFG('DarkOrange')}${raw}${setClear()}]`
         }
         case 'trace': {
