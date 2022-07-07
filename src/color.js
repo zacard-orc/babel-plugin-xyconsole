@@ -12,14 +12,21 @@ const DFT_WHITE = '255;255;255'
 
 const setFG = (incolor) => {
     incolor = incolor.toLowerCase()
-    return `\\033[38;2;${gColor[incolor] ? gColor[incolor] : DFT_BLACK}m`
+    // return "33[38;2;"+gColor[incolor] ? gColor[incolor] : DFT_BLACK+"m"
+    // eslint-disable-next-line prefer-template,quotes
+    return "\x1b[38;2;" + gColor[incolor] + "m"
 }
+
+const setClear = () => '\x1b[0m'
+
 const setBG = (incolor) => {
     incolor = incolor.toLowerCase()
-    return `\\033[48;2;${gColor[incolor] ? gColor[incolor] : DFT_WHITE}m`
+    // eslint-disable-next-line prefer-template,quotes
+    return "\x1b[48;2;" + gColor[incolor] + "m"
 }
 
 module.exports = {
     setFG,
     setBG,
+    setClear,
 }

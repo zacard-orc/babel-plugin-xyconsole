@@ -27,12 +27,12 @@ function runTest(sourcefile, matchRule) {
         highlightCode: true,
         filename: sourcefile,
         minified: false,
-        compact: undefined,
+        compact: false,
         retainLines: true,
         generatorOpts: {
             jsescOption: {
-                wrap: true,
                 minimal: false,
+                compact: true,
             },
         },
         plugins: [
@@ -51,8 +51,10 @@ function runTest(sourcefile, matchRule) {
         return str
             .trimRight()
             .replace(/\r\n/g, '')
+            .trimRight(';')
             // .replace(/;/g, '')
     }
+
 
     process.stdout.write(chalk.bgCyan('[Diff]', full))
     process.stdout.write('\n\n')

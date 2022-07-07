@@ -1,6 +1,6 @@
 const { declare } = require('@babel/helper-plugin-utils')
 const path = require('path')
-const { setFG, setBG } = require('./color')
+const { setFG, setBG, setClear } = require('./color')
 
 const targetCalleeName = ['log', 'info', 'error', 'debug', 'trace'].map((item) => `console.${item}`)
 
@@ -126,12 +126,14 @@ const xyconsolePlugin = declare((api, options, dirname) => {
     }
 
     function getLevel(raw) {
-        const b = `[${setFG('DeepSkyBlue')}${raw}${setFG('Gainsboro')}]`
-        console.log(b)
-        return b
+        // const b = `[${setFG('DeepSkyBlue')}${raw}${setFG('Gainsboro')}]`
+        // eslint-disable-next-line prefer-template,quotes
+        return "[" + setFG('DeepSkyBlue') + raw + setClear() + "]"
     }
 
     return {
+        pre(state) {
+        },
         visitor: {
             Identifier(bbpath, state) {
                 fileset.add(state.file.opts.filename)
@@ -164,8 +166,6 @@ const xyconsolePlugin = declare((api, options, dirname) => {
                 bbpath.node.arguments.unshift(types.stringLiteral(dft))
 
                 const level = getLevel(ce.node.property.name)
-                console.log(level)
-                console.log(types.stringLiteral(level))
                 bbpath.node.arguments.unshift(types.stringLiteral(level))
 
                 // https://www.jb51.net/article/122984.htm
@@ -173,6 +173,8 @@ const xyconsolePlugin = declare((api, options, dirname) => {
                 const newNode = template.expression(ts)()
                 bbpath.node.arguments.unshift(newNode)
             },
+        },
+        post(state) {
         },
     }
 })
