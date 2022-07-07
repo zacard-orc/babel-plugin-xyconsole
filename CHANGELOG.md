@@ -1,3 +1,11 @@
+## <small>1.2.3 (2022-07-07)</small>
+
+* :memo: doc: update assets ([280aa1f](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/280aa1f))
+* :pencil2: fix: some codes ([7b2dad8](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/7b2dad8))
+* :truck: feat: sample log level ([d901daf](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/d901daf))
+
+
+
 ## <small>1.2.2 (2022-07-07)</small>
 
 * :lipstick: feat: color support ing ([261f504](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/261f504))
