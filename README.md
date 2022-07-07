@@ -20,5 +20,12 @@ babel --plugins babel-plugin-xyconsole ./yourcode.js
 babel.config.js
 ```
 
+# Sample
+## auto loglevel - 1
+![loglevel_en](./assets/poem_en.jpg)
+
+## auto loglevel - 2
+![loglevel_zh-cn](./assets/poem_zh-cn.jpg)
+
 
 # Support
