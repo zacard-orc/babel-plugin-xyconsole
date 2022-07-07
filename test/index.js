@@ -42,6 +42,7 @@ function runTest(sourcefile, matchRule) {
                     tsFmt: 'ISOStringV2',
                     lineFmt: '[%file:%x] %func',
                     colorSchema: '',
+                    // todo web or ternimal
                 },
             ],
         ],
