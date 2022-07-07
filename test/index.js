@@ -26,8 +26,8 @@ function runTest(sourcefile, matchRule) {
     const { code: outputCode } = transformFromAstSync(ast, sourceCode, {
         highlightCode: true,
         filename: sourcefile,
-        minified: false,
-        compact: false,
+        minified: true,
+        compact: true,
         retainLines: true,
         generatorOpts: {
             jsescOption: {
@@ -51,10 +51,7 @@ function runTest(sourcefile, matchRule) {
         return str
             .trimRight()
             .replace(/\r\n/g, '')
-            .trimRight(';')
-            // .replace(/;/g, '')
     }
-
 
     process.stdout.write(chalk.bgCyan('[Diff]', full))
     process.stdout.write('\n\n')

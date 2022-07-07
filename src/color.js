@@ -29,4 +29,6 @@ module.exports = {
     setFG,
     setBG,
     setClear,
+    DFT_BLACK,
+    DFT_WHITE,
 }
