@@ -30,4 +30,6 @@ babel.config.js
 ## auto loglevel - 3
 ![loglevel_jp](./assets/poem_jp.jpg)
 
-# Support
+# Thanks
+- https://github.com/RReverser/babel-plugin-hello-world
+- https://github.com/QuarkGluonPlasma/babel-plugin-exercize
