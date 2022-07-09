@@ -42,7 +42,7 @@ function runTest(sourcefile, matchRule) {
                     tsFmt: 'LocaleString',
                     lineFmt: '[%file:%x] %func',
                     colorSchema: '',
-                    ide: 'terminal',
+                    ide: 'browser',
                 },
             ],
         ],

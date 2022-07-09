@@ -17,9 +17,6 @@
     "README.md",
     "CHANGELOG.md"
   ],
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zacard-orc/babel-plugin-xyconsole.git"

@@ -27,5 +27,7 @@ babel.config.js
 ## auto loglevel - 2
 ![loglevel_zh-cn](./assets/poem_zh-cn.jpg)
 
+## auto loglevel - 3
+![loglevel_jp](./assets/poem_jp.jpg)
 
 # Support
