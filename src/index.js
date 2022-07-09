@@ -9,6 +9,7 @@ const xyconsolePlugin = declare((api, options, dirname) => {
     const method = new Map()
 
     const { types, template } = api
+    const { ide } = options
 
     function getFilename() {
         const af = Array.from(fileset)
@@ -190,7 +191,11 @@ const xyconsolePlugin = declare((api, options, dirname) => {
                 // https://www.jb51.net/article/122984.htm
                 const ts = getTs(PluginPass.opts)
                 const newNode = template.expression(ts)()
-                bbpath.node.arguments.unshift(newNode)
+
+                // eslint-disable-next-line no-unused-expressions
+                ide === 'browser'
+                    ? bbpath.node.arguments.splice(1, 0, newNode)
+                    : bbpath.node.arguments.unshift(newNode)
             },
         },
         post(state) {

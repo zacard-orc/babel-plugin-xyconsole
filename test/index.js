@@ -39,10 +39,10 @@ function runTest(sourcefile, matchRule) {
             [
                 devPlugin,
                 {
-                    tsFmt: 'ISOStringV2',
+                    tsFmt: 'LocaleString',
                     lineFmt: '[%file:%x] %func',
                     colorSchema: '',
-                    // todo web or ternimal
+                    ide: 'terminal',
                 },
             ],
         ],
