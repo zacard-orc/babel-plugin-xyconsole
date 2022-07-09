@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-xyconsole",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "A Tool of Console.log",
   "main": "dist/index.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "CHANGELOG.md"
   ],
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com"
   },
   "repository": {
     "type": "git",

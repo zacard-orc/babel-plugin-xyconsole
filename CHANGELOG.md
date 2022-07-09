@@ -1,3 +1,14 @@
+## <small>1.2.4 (2022-07-09)</small>
+
+* :heavy_plus_sign: feat: npm pub ([f91df95](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/f91df95))
+* :heavy_plus_sign: feat: support web ([3c89728](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/3c89728))
+* :heavy_plus_sign: todo: web or terminal ([44a36ce](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/44a36ce))
+* :memo: doc: add assets ([2e5b0d8](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/2e5b0d8))
+* :memo: doc: update readme ([74821cd](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/74821cd))
+* :wrench: feat: add case ([d7fc605](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/d7fc605))
+
+
+
 ## <small>1.2.3 (2022-07-07)</small>
 
 * :memo: doc: update assets ([280aa1f](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/280aa1f))
