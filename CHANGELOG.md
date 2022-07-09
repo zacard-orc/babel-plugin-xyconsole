@@ -1,3 +1,9 @@
+## <small>1.2.5 (2022-07-09)</small>
+
+* :zap: feat: npm doc ([49ba893](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/49ba893))
+
+
+
 ## <small>1.2.4 (2022-07-09)</small>
 
 * :heavy_plus_sign: feat: npm pub ([f91df95](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/f91df95))
