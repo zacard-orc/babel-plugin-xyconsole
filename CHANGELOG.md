@@ -1,3 +1,11 @@
+## 1.3.0 (2022-07-09)
+
+* :memo: doc: sample update ([912da9d](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/912da9d))
+* :memo: doc: sample update ([ffbd31e](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/ffbd31e))
+* :memo: doc: thanks update ([cee624a](https://github.com/zacard-orc/babel-plugin-xyconsole/commit/cee624a))
+
+
+
 ## <small>1.2.8 (2022-07-09)</small>
 
 
