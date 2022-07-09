@@ -1,5 +1,5 @@
 {
-  "name": "babel-plugin-xyconsole",
+  "name": "@zacard-orc/babel-plugin-xyconsole",
   "version": "1.2.4",
   "description": "A Tool of Console.log",
   "main": "dist/index.js",
